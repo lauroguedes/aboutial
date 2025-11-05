@@ -2,6 +2,7 @@
 name: "Lauro Guedes"
 role: "Software Engineer"
 avatar: "https://avatar.iran.liara.run/public/job/astronomer/male"
+summary: "Passionate Software Engineer with a love for building innovative solutions."
 date: 2024-06-15
 ---
 

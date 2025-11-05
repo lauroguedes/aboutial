@@ -10,9 +10,10 @@ useSeoMeta({
 </script>
 
 <template>
+  <img :src="home?.avatar" :alt="home?.name" />
   <div>{{ home?.name }}</div>
   <div>{{ home?.role }}</div>
-  <img :src="home?.avatar" :alt="home?.name" />
+  <div>{{ home?.summary }}</div>
   <ContentRenderer v-if="home" :value="home" />
   <div v-else>Home not found</div>
 </template>
