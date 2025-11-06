@@ -89,6 +89,37 @@ The project uses `@tailwindcss/typography` to style markdown content rendered by
 
 **Note:** In v4, plugins are registered via `@plugin` directive in CSS, not in config files.
 
+#### Dark Mode Implementation
+
+The project uses Tailwind CSS v4's class-based dark mode strategy for manual theme toggling.
+
+**Configuration:**
+```css
+@custom-variant dark (&:where(.dark, .dark *));
+```
+
+**Components:**
+- `components/ThemeToggle.vue` - Toggle switch in top-right corner
+  - Sun icon for light mode, moon icon for dark mode
+  - Persists preference in localStorage
+  - Falls back to system preference on first visit
+  - Fixed positioning with z-50
+
+**Usage in Components:**
+- Apply dark mode variants: `bg-white dark:bg-gray-900`
+- Text colors: `text-gray-900 dark:text-white`
+- For markdown: `prose dark:prose-invert`
+
+**Behavior:**
+- Toggles `dark` class on `<html>` element
+- Three-state logic: light, dark, or system preference
+- Smooth transitions with `transition-colors`
+
+**Testing:**
+- Toggle button visible in top-right corner
+- Preference persists across page reloads
+- Respects system preference if no manual selection made
+
 #### Hot Module Replacement (HMR) Configuration
 
 Tailwind CSS v4 had known HMR issues with the Vite plugin in Nuxt (see GitHub issues #16760, #31096). The project uses the **PostCSS plugin** instead, which provides better HMR behavior with SSR enabled.

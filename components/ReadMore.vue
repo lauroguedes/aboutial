@@ -54,14 +54,14 @@ const toggleExpanded = () => {
       <ContentRenderer
         v-if="body"
         :value="{ body }"
-        class="leading-relaxed prose prose-invert max-w-none"
+        class="leading-relaxed prose dark:prose-invert max-w-none"
       />
     </div>
 
     <!-- Gradient fade effect when collapsed -->
     <div
       v-if="shouldTruncate && !isExpanded"
-      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-900 to-transparent pointer-events-none"
+      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none"
     />
 
     <!-- Read more/less button (in front of gradient) -->

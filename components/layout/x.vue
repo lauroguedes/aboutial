@@ -19,7 +19,7 @@ const props = defineProps<Props>();
 
 <template>
   <div
-    class="max-w-md shadow-md bg-gray-900 rounded-2xl border border-gray-700 overflow-hidden"
+    class="max-w-md shadow-md bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors"
   >
     <!-- Header with avatar and name -->
     <div class="p-6 pb-4">
@@ -32,14 +32,14 @@ const props = defineProps<Props>();
           />
           <!-- outline style button -->
           <a
-            class="px-4 py-2 rounded-full border border-gray-300 text-md font-medium text-white hover:bg-gray-800 transition-colors"
+            class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-300 text-md font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
             href="https://lauroguedes.dev"
             >Linkedin</a
           >
         </div>
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2">
-            <h1 class="text-xl font-bold text-white">{{ name }}</h1>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">{{ name }}</h1>
             <svg
               viewBox="0 0 22 22"
               aria-label="Verified account"
@@ -53,14 +53,14 @@ const props = defineProps<Props>();
               </g>
             </svg>
           </div>
-          <p class="text-gray-500 text-sm">{{ role }}</p>
+          <p class="text-gray-500 dark:text-gray-400 text-sm">{{ role }}</p>
         </div>
       </div>
     </div>
 
     <!-- Bio section -->
     <div class="px-6 pb-4">
-      <p class="text-white text-base leading-relaxed mb-3" v-if="summary">
+      <p class="text-gray-900 dark:text-white text-base leading-relaxed mb-3" v-if="summary">
         {{ summary }}
       </p>
       <ReadMore
@@ -74,12 +74,12 @@ const props = defineProps<Props>();
     <!-- Stats -->
     <div class="px-6 pb-4 flex gap-5">
       <div class="flex gap-1">
-        <span class="text-white font-bold">391</span>
-        <span class="text-gray-500">Following</span>
+        <span class="text-gray-900 dark:text-white font-bold">391</span>
+        <span class="text-gray-500 dark:text-gray-400">Following</span>
       </div>
       <div class="flex gap-1">
-        <span class="text-white font-bold">78</span>
-        <span class="text-gray-500">Followers</span>
+        <span class="text-gray-900 dark:text-white font-bold">78</span>
+        <span class="text-gray-500 dark:text-gray-400">Followers</span>
       </div>
     </div>
 

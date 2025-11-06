@@ -1,5 +1,12 @@
+<script setup lang="ts">
+import ThemeToggle from "../components/ThemeToggle.vue";
+</script>
+
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div>
+    <ThemeToggle />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
