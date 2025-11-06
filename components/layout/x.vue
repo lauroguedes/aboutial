@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ReadMore from "../ReadMore.vue";
+
 interface Props {
   avatar: string;
   name: string;
@@ -61,10 +63,11 @@ const props = defineProps<Props>();
       <p class="text-white text-base leading-relaxed mb-3" v-if="summary">
         {{ summary }}
       </p>
-      <ContentRenderer
+      <ReadMore
         v-if="body"
-        :value="{ body }"
-        class="text-white text-base leading-relaxed prose prose-invert max-w-none"
+        :body="body"
+        collapsed-height="100px"
+        max-height="250px"
       />
     </div>
 

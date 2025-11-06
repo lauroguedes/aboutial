@@ -67,6 +67,28 @@ The schema enforces type safety for content fields and must include all required
 - No Tailwind config file needed (Tailwind v4 is zero-config)
 - **DO NOT install `@nuxtjs/tailwindcss`** - it conflicts with v4
 
+#### Typography Plugin for Markdown Styling
+
+The project uses `@tailwindcss/typography` to style markdown content rendered by `@nuxt/content`.
+
+**Setup** (Tailwind v4 style):
+```css
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+```
+
+**Usage:**
+- Apply `prose` classes to ContentRenderer for automatic markdown styling
+- Use `prose-invert` for dark mode styling
+- Example: `class="prose prose-invert max-w-none"`
+
+**Features:**
+- Automatic styling for headings, paragraphs, lists, code blocks
+- Link, blockquote, and table formatting
+- Customizable via CSS variables in Tailwind v4
+
+**Note:** In v4, plugins are registered via `@plugin` directive in CSS, not in config files.
+
 #### Hot Module Replacement (HMR) Configuration
 
 Tailwind CSS v4 had known HMR issues with the Vite plugin in Nuxt (see GitHub issues #16760, #31096). The project uses the **PostCSS plugin** instead, which provides better HMR behavior with SSR enabled.
