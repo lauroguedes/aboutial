@@ -1,12 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from "@tailwindcss/vite";
-
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["./app/assets/css/main.css"],
+
+  postcss: {
+    plugins: {
+      "@tailwindcss/postcss": {},
+    },
+  },
+
   vite: {
-    plugins: [tailwindcss()],
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 100,
+      },
+    },
+    optimizeDeps: {
+      include: ["tailwindcss"],
+    },
   },
 
   modules: [

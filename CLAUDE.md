@@ -55,3 +55,56 @@ When modifying content structure, update both:
 2. `app/pages/index.vue` - Template consuming the content
 
 The schema enforces type safety for content fields and must include all required fields (`avatar`, `name`, `role`).
+
+### Styling
+
+**IMPORTANT:** This project uses **Tailwind CSS v4** with the PostCSS plugin.
+
+- Always use Tailwind CSS utility classes for all styling
+- Setup: `tailwindcss` v4 + `@tailwindcss/postcss` plugin
+- CSS file: `app/assets/css/main.css` with `@import "tailwindcss";`
+- PostCSS configuration: `postcss.config.js` with `@tailwindcss/postcss` plugin
+- No Tailwind config file needed (Tailwind v4 is zero-config)
+- **DO NOT install `@nuxtjs/tailwindcss`** - it conflicts with v4
+
+#### Hot Module Replacement (HMR) Configuration
+
+Tailwind CSS v4 had known HMR issues with the Vite plugin in Nuxt (see GitHub issues #16760, #31096). The project uses the **PostCSS plugin** instead, which provides better HMR behavior with SSR enabled.
+
+The project includes Vite server configuration for better file watching:
+
+```typescript
+postcss: {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+},
+
+vite: {
+  server: {
+    watch: {
+      usePolling: true,  // Enables file polling for better change detection
+      interval: 100,     // Check for changes every 100ms
+    },
+  },
+  optimizeDeps: {
+    include: ["tailwindcss"],  // Pre-optimize Tailwind for better performance
+  },
+}
+```
+
+If Tailwind classes still don't update on hot reload:
+1. Restart the dev server: `npm run dev`
+2. Clear Nuxt cache: `rm -rf .nuxt`
+3. Hard refresh browser (Ctrl+Shift+R / Cmd+Shift+R)
+
+### Layout System
+
+The project uses a two-layer layout system:
+1. **Base Layout** (`layouts/default.vue`) - Provides page-level structure and centering
+2. **Component Layouts** (`components/layout/*.vue`) - Content-specific layouts selected via frontmatter
+
+The `layout` field in content frontmatter determines which component layout renders:
+- `x` → `components/layout/x.vue` (Twitter/X style card)
+- `linkedin` → `components/layout/linkedin.vue` (future)
+- `instagram` → `components/layout/instagram.vue` (future)
