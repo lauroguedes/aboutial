@@ -13,6 +13,13 @@ export default defineContentConfig({
         layout: z.enum(["x", "linkedin", "instagram"]).default("x"),
         summary: z.string().optional(),
         date: z.date().optional(),
+        socialLinks: z
+          .object({
+            github: z.string().url().optional(),
+            linkedin: z.string().url().optional(),
+            twitter: z.string().url().optional(),
+          })
+          .optional(),
       }),
     }),
   },
