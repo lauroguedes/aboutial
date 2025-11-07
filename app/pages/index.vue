@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LayoutX from "../../components/layout/x.vue";
+import LayoutInstagram from "../../components/layout/instagram.vue";
 
 definePageMeta({
   layout: "default",
@@ -17,8 +18,8 @@ useSeoMeta({
 // Map layout names to component imports
 const layoutComponents = {
   x: LayoutX,
+  instagram: LayoutInstagram,
   // linkedin: LayoutLinkedin,
-  // instagram: LayoutInstagram,
 };
 
 // Get the layout component based on frontmatter

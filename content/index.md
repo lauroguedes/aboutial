@@ -3,6 +3,7 @@ name: "Lauro Guedes"
 role: "@lauroguedes · Software Engineer"
 avatar: "/avatar.png"
 summary: "Web technologies enthusiast and Software Engineer. Has a soft spot for PHP 💜."
+layout: "instagram" # Options: instagram, x, linkedin
 date: 2024-06-15
 background: "/bg.jpg"  # Optional: supports .gif, .png, .webp, .svg, .mp4
 socialLinks:
@@ -13,7 +14,7 @@ socialLinks:
   youTube: "https://youtube.com/leowgweb",
 ---
 
-⚒️ Building... 
+⚒️ **Building...**
 - 🎨 [Screencial](http://screencial.art)
 - 🪻 [Mary UI Starter Kit](http://bit.ly/3GFUgdd)
 - 👨🏼‍💻 [CodeTips Platform](http://codetips.cloud)

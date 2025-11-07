@@ -5,11 +5,13 @@ interface Props {
   body: any;
   collapsedHeight?: string;
   maxHeight?: string;
+  gradientFrom?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   collapsedHeight: "100px",
   maxHeight: "400px",
+  gradientFrom: "from-white dark:from-gray-900",
 });
 
 const isExpanded = ref(false);
@@ -54,14 +56,17 @@ const toggleExpanded = () => {
       <ContentRenderer
         v-if="body"
         :value="{ body }"
-        class="leading-relaxed prose dark:prose-invert max-w-none"
+        class="leading-relaxed prose prose-img:rounded-lg prose-img:shadow-md prose-img:w-full prose-a:text-blue-500 prose-a:hover:text-blue-400 dark:prose-invert max-w-none"
       />
     </div>
 
     <!-- Gradient fade effect when collapsed -->
     <div
       v-if="shouldTruncate && !isExpanded"
-      class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-900 to-transparent pointer-events-none"
+      :class="[
+        'absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t to-transparent pointer-events-none',
+        gradientFrom,
+      ]"
     />
 
     <!-- Read more/less button (in front of gradient) -->
