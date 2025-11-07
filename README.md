@@ -11,6 +11,9 @@ A modern, flexible personal portfolio/about page built with Nuxt 4, featuring mu
 
 </br>
 
+![1107](https://github.com/user-attachments/assets/7cac5550-6983-40b8-b8c8-dcf15f8061e9)
+
+
 </div>
 
 ## Features
