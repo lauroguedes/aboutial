@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ThemeToggle from "../components/ThemeToggle.vue";
+import Footer from "../components/Footer.vue";
 </script>
 
 <template>
@@ -8,5 +9,6 @@ import ThemeToggle from "../components/ThemeToggle.vue";
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <Footer />
   </div>
 </template>

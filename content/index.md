@@ -3,7 +3,7 @@ name: "Lauro Guedes"
 role: "@lauroguedes · Software Engineer"
 avatar: "/avatar.png"
 summary: "Web technologies enthusiast and Software Engineer. Has a soft spot for PHP 💜."
-layout: "linkedin" # Options: instagram, x, linkedin
+layout: "x" # Options: instagram, x, linkedin
 date: 2024-06-15
 background: "/bg.jpg"  # Optional: supports .gif, .png, .webp, .svg, .mp4
 socialLinks:
