@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import LayoutX from "../../components/layout/x.vue";
 import LayoutInstagram from "../../components/layout/instagram.vue";
+import LayoutLinkedin from "../../components/layout/linkedin.vue";
 
 definePageMeta({
   layout: "default",
@@ -19,7 +20,7 @@ useSeoMeta({
 const layoutComponents = {
   x: LayoutX,
   instagram: LayoutInstagram,
-  // linkedin: LayoutLinkedin,
+  linkedin: LayoutLinkedin,
 };
 
 // Get the layout component based on frontmatter
@@ -39,6 +40,7 @@ const layoutComponent = computed(() => {
     :summary="home.summary"
     :social-links="home.socialLinks"
     :body="home.body"
+    :background="home.background"
   />
   <div v-else class="text-white text-center">Home not found</div>
 </template>
