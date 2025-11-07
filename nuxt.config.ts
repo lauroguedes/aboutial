@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    mode: "css",
+    cssLayer: "base",
+  },
+
   vite: {
     server: {
       watch: {

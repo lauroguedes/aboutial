@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import ReadMore from "../ReadMore.vue";
+import SocialLinks from "../SocialLinks.vue";
+import XFollowMe from "../XFollowMe.vue";
+import { computed } from "vue";
 
 interface Props {
   avatar: string;
@@ -11,6 +14,8 @@ interface Props {
     github?: string;
     linkedin?: string;
     twitter?: string;
+    instagram?: string;
+    youTube?: string;
   };
 }
 
@@ -30,16 +35,13 @@ const props = defineProps<Props>();
             :alt="name"
             class="w-20 h-20 rounded-full object-cover"
           />
-          <!-- outline style button -->
-          <a
-            class="px-4 py-2 rounded-full border border-gray-300 dark:border-gray-300 text-md font-medium text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            href="https://lauroguedes.dev"
-            >Linkedin</a
-          >
+          <XFollowMe v-if="socialLinks?.twitter" :url="socialLinks.twitter" />
         </div>
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2">
-            <h1 class="text-xl font-bold text-gray-900 dark:text-white">{{ name }}</h1>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">
+              {{ name }}
+            </h1>
             <svg
               viewBox="0 0 22 22"
               aria-label="Verified account"
@@ -60,7 +62,10 @@ const props = defineProps<Props>();
 
     <!-- Bio section -->
     <div class="px-6 pb-4">
-      <p class="text-gray-900 dark:text-white text-base leading-relaxed mb-3" v-if="summary">
+      <p
+        class="text-gray-900 dark:text-white text-base leading-relaxed mb-3"
+        v-if="summary"
+      >
         {{ summary }}
       </p>
       <ReadMore
@@ -84,34 +89,8 @@ const props = defineProps<Props>();
     </div>
 
     <!-- Social Links -->
-    <div class="px-6 pb-6 flex gap-4" v-if="socialLinks">
-      <a
-        v-if="socialLinks.github"
-        :href="socialLinks.github"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
-      >
-        <Icon name="mdi:github" class="w-6 h-6" />
-      </a>
-      <a
-        v-if="socialLinks.linkedin"
-        :href="socialLinks.linkedin"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
-      >
-        <Icon name="mdi:linkedin" class="w-6 h-6" />
-      </a>
-      <a
-        v-if="socialLinks.twitter"
-        :href="socialLinks.twitter"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-gray-400 hover:text-white transition-colors"
-      >
-        <Icon name="mdi:twitter" class="w-6 h-6" />
-      </a>
+    <div class="px-6 pb-6">
+      <SocialLinks :social-links="socialLinks" size="md" />
     </div>
   </div>
 </template>
