@@ -2,7 +2,6 @@
 import ReadMore from "../ReadMore.vue";
 import SocialLinks from "../SocialLinks.vue";
 import XFollowMe from "../XFollowMe.vue";
-import { computed } from "vue";
 
 interface Props {
   avatar: string;

@@ -4,6 +4,7 @@ role: "@lauroguedes · Software Engineer"
 avatar: "/avatar.png"
 summary: "Web technologies enthusiast and Software Engineer. Has a soft spot for PHP 💜."
 date: 2024-06-15
+background: "/bg.jpg"  # Optional: supports .gif, .png, .webp, .svg, .mp4
 socialLinks:
   github: "https://github.com/lauroguedes",
   linkedin: "https://linkedin.com/in/lauroguedes",
