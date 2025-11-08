@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import PageBackground from "../../components/PageBackground.vue";
+import AvailableBadge from "../../components/AvailableBadge.vue";
 
 const route = useRoute();
 
@@ -11,6 +12,7 @@ const { data: pageData } = await useAsyncData(
 );
 
 const background = computed(() => pageData.value?.background);
+const showAvailableBadge = computed(() => pageData.value?.availableBadge);
 </script>
 
 <template>
@@ -19,6 +21,7 @@ const background = computed(() => pageData.value?.background);
   >
     <PageBackground v-if="background" :background="background" />
     <div class="relative z-10">
+      <AvailableBadge v-if="showAvailableBadge" />
       <slot />
     </div>
   </div>

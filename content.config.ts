@@ -14,6 +14,7 @@ export default defineContentConfig({
         summary: z.string().optional(),
         date: z.date().optional(),
         background: z.string().optional(),
+        availableBadge: z.boolean().optional().default(false),
         socialLinks: z
           .object({
             github: z.string().url().optional(),
