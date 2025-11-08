@@ -25,7 +25,10 @@ https://github.com/user-attachments/assets/a2152196-3d0d-4416-9ac0-c76cd0b489d3
 - 🎬 **Media Backgrounds**: Support for images (gif, png, webp, svg) and videos (mp4)
 - 🔗 **Social Links**: Integrated social media links (GitHub, LinkedIn, Twitter, Instagram, YouTube)
 - 📖 **Read More Component**: Collapsible content with smooth transitions
+- 💼 **Availability Badge**: Show your availability status with animated pulsing indicator
+- 🚀 **One-Click Deploy**: Deploy to Vercel directly from your portfolio with integrated deploy button
 - ⚡ **Performance**: Built on Nuxt 4 with optimized assets and fonts
+- ✨ **Smooth Animations**: Page load animations with fade, slide, and blur effects
 
 ## Tech Stack
 
@@ -58,11 +61,13 @@ aboutial/
 │   │   ├── x.vue              # Twitter/X layout component
 │   │   ├── instagram.vue      # Instagram layout component
 │   │   └── linkedin.vue       # LinkedIn layout component
+│   ├── AvailableBadge.vue     # Availability status badge with pulsing animation
 │   ├── Footer.vue             # Footer with attribution
 │   ├── PageBackground.vue     # Background handler (image/video/svg)
 │   ├── ReadMore.vue           # Collapsible content component
 │   ├── SocialLinks.vue        # Social media links component
 │   ├── ThemeToggle.vue        # Dark/light mode toggle
+│   ├── VercelDeployButton.vue # One-click Vercel deployment button
 │   └── XFollowMe.vue          # Twitter follow button
 ├── content/
 │   └── index.md               # Main content file with frontmatter
@@ -128,6 +133,7 @@ summary: "Your bio/summary"
 date: 2024-06-15
 layout: "x"  # Options: "x", "instagram", "linkedin"
 background: "/bg.jpg"  # Optional: .gif, .png, .webp, .svg, .mp4
+availableBadge: true  # Optional: Show/hide "Available for new opportunities" badge
 socialLinks:
   github: "https://github.com/username"
   linkedin: "https://linkedin.com/in/username"
@@ -252,6 +258,55 @@ Dark/light mode toggle with persistence:
 - Moon icon for dark mode
 - localStorage persistence
 - System preference fallback
+
+### Footer Component
+
+Attribution footer with link:
+
+```vue
+<Footer />
+```
+
+Features:
+- Fixed position at bottom-right
+- Text: "Crafted by an Artisan Lauro Guedes"
+- Link to https://lauroguedes.dev
+- Small font size with light/dark mode support
+- Opens in new tab
+
+### VercelDeployButton Component
+
+One-click deploy to Vercel button:
+
+```vue
+<VercelDeployButton />
+<!-- or with custom repository -->
+<VercelDeployButton repository-url="https://github.com/user/repo" />
+```
+
+Features:
+- Official Vercel brand icon
+- Backdrop blur effect for modern glass-morphism look
+- Auto-generates Vercel deploy URL
+- Light/dark mode with semi-transparent backgrounds
+- Hover animations (scale + shadow)
+- Compact size (xs text, small padding)
+
+### AvailableBadge Component
+
+Status badge showing availability for opportunities:
+
+```vue
+<AvailableBadge />
+```
+
+Features:
+- Pulsing green dot animation
+- Text: "Available for new opportunities"
+- Light/dark mode support with emerald color scheme
+- Backdrop blur effect
+- Positioned at top of layout card
+- Can be toggled via `availableBadge` frontmatter field
 
 ## Development Notes
 
