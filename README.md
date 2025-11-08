@@ -76,8 +76,7 @@ aboutial/
 │       └── main.css           # Global styles with Tailwind directives
 ├── public/                    # Static assets (avatar, background images)
 ├── content.config.ts          # Content schema with Zod validation
-├── nuxt.config.ts             # Nuxt configuration
-└── postcss.config.js          # PostCSS configuration
+└── nuxt.config.ts             # Nuxt configuration (includes PostCSS setup)
 ```
 
 ## Setup

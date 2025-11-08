@@ -33,7 +33,7 @@ const toggleExpanded = () => {
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative animate-fade-in-up">
     <!-- Content container with conditional max-height -->
     <div
       ref="contentRef"
