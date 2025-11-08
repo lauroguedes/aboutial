@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import PageBackground from "../../components/PageBackground.vue";
 import AvailableBadge from "../../components/AvailableBadge.vue";
+import VercelDeployButton from "../../components/VercelDeployButton.vue";
 
 const route = useRoute();
 
@@ -23,6 +24,7 @@ const showAvailableBadge = computed(() => pageData.value?.availableBadge);
     <div class="relative z-10">
       <AvailableBadge v-if="showAvailableBadge" />
       <slot />
+      <VercelDeployButton />
     </div>
   </div>
 </template>
