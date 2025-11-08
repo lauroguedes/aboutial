@@ -23,7 +23,7 @@ const props = defineProps<Props>();
 
 <template>
   <div
-    class="max-w-md shadow-lg bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors"
+    class="max-w-md shadow-lg bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors animate-fade-in-up"
   >
     <!-- Cover Image Section -->
     <div class="relative">

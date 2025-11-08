@@ -3,3 +3,21 @@
 
 /* Enable class-based dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Page load animation - fade in with bottom-to-top slide and blur effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 600ms ease-out both;
+}

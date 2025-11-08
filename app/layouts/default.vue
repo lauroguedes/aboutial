@@ -22,7 +22,7 @@ const showAvailableBadge = computed(() => pageData.value?.availableBadge);
   >
     <PageBackground v-if="background" :background="background" />
     <div class="relative z-10">
-      <AvailableBadge v-if="showAvailableBadge" />
+      <AvailableBadge class="animate-fade-in-up" v-if="showAvailableBadge" />
       <slot />
       <VercelDeployButton />
     </div>

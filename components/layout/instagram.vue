@@ -22,7 +22,7 @@ const props = defineProps<Props>();
 
 <template>
   <div
-    class="max-w-md shadow-md bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors"
+    class="max-w-md shadow-md bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden transition-colors animate-fade-in-up"
   >
     <!-- Header with avatar, name, role, and menu -->
     <div class="p-6 flex items-start justify-between">
